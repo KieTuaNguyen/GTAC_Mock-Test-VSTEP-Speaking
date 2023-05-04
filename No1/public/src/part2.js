@@ -1,6 +1,6 @@
 var array = [];
 let waitingTime = 60;
-let recordTime = 240;
+let recordTime = 120;
 $("#descriptionStart").click(Recorder);
 
 function Recorder() {
@@ -27,8 +27,8 @@ function Recorder() {
             recorder = new MediaRecorder(mediaStream, {
                 type: 'audio/ogg; codecs=opus'
             });
-            stream = mediaStream; // Define the stream variable and assign the mediaStream value
-            recorder.start(); // Starting the record
+            stream = mediaStream;
+            recorder.start();
 
             recorder.ondataavailable = (e) => {
                 // Converting audio blob to base64
@@ -42,17 +42,13 @@ function Recorder() {
                     array.push(audio64);
                     localStorage.setItem("array", JSON.stringify(array));
 
-                    // Convert the Blob to a Blob of type 'audio/mp3'
                     const mp3Blob = new Blob([e.data], { type: 'audio/mp3' });
 
-                    // Create a new anchor element and set its download attribute to the desired filename
                     const link = document.createElement('a');
-                    link.download = 'Recording Part 3.mp3';
+                    link.download = 'Recording Part 2.mp3';
 
-                    // Convert the Blob to a URL representing the file
                     link.href = URL.createObjectURL(mp3Blob);
 
-                    // Dispatch a click event on the anchor element
                     link.dispatchEvent(new MouseEvent('click'));
                 };
 
@@ -81,7 +77,7 @@ function Recorder() {
                 recorder = null;
                 stopButton.innerText = "Recording stopped";
                 stopButton.removeEventListener("click", stopRecording);
-                stream.getTracks().forEach(track => track.stop()); // Stop the getUserMedia stream
+                stream.getTracks().forEach(track => track.stop());
             }
         }, (recordTime + 1) * 1000);
 
@@ -93,7 +89,7 @@ function Recorder() {
                 stopButton.removeEventListener("click", stopRecording);
                 stop = 1;
                 clearTimeout(timeoutId);
-                stream.getTracks().forEach(track => track.stop()); // Stop the getUserMedia stream
+                stream.getTracks().forEach(track => track.stop());
             }
         }
 

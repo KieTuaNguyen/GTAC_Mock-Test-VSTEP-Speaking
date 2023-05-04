@@ -1,6 +1,6 @@
 var array = [];
-let waitingTime = 60;
-let recordTime = 240;
+let waitingTime = 0;
+let recordTime = 300;
 $("#descriptionStart").click(Recorder);
 
 function Recorder() {
@@ -47,7 +47,7 @@ function Recorder() {
 
                     // Create a new anchor element and set its download attribute to the desired filename
                     const link = document.createElement('a');
-                    link.download = 'Recording Part 1.mp3';
+                    link.download = 'Recording Part 2.mp3';
 
                     // Convert the Blob to a URL representing the file
                     link.href = URL.createObjectURL(mp3Blob);
