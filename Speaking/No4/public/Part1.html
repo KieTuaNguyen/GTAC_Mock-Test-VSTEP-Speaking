@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style/index.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="https://gtac-uog.com/favicon.png" type="image/x-icon">
+    <title>GTAC | VSTEP SPEAKING MOCK TEST</title>
+</head>
+
+<body>
+    <div class="row d-flex justify-content-center align-items-center" id="speakingDescription">
+        <div class="row">
+            <div class="d-flex flex-column align-items-center">
+                <p>VSTEP Speaking Mock Test | by Computing Department of GTAC</p>
+                <button id="descriptionStart">Part 1</button>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0" id="speaking" contenteditable="false" ondragstart="return false" onselectstart="return false">
+        <div class="container">
+
+            <div class="mt-4 d-flex justify-content-center flex-column align-items-center">
+                <div class="container my-5">
+                    <div class="card shadow-sm">
+                        <div class="card-header">
+                            <h2 class="card-title text-center mb-4">Part 1</h2>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="card border-0 mb-4">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><strong>Communication</strong></h5>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">How do you keep in touch with your friends
+                                                    and family?</li>
+                                                <li class="list-group-item">How often do you hang out with your friends?
+                                                </li>
+                                                <li class="list-group-item">Which one do you prefer, face-to-face
+                                                    communication or via social media platforms?</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card border-0 mb-4">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><strong>Shoes</strong></h5>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">How often do you buy shoes?</li>
+                                                <li class="list-group-item">Do you like to wear shoes that are
+                                                    comfortable or good-looking?</li>
+                                                <li class="list-group-item">Why do some people have too many shoes?</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card border-0 mb-4">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><strong>Traffic</strong></h5>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">How is the traffic in your city?</li>
+                                                <li class="list-group-item">Is there anything you want to improve about
+                                                    traffic in your city?</li>
+                                                <li class="list-group-item">What would you do if you got stuck in
+                                                    traffic jams for several hours?</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <div class="d-flex justify-content-between" id="recordStarting">
+                                    <p class="text-muted"><small><span id="timer"></span></small></p>
+                                </div>
+                                <div id="countdown-message" style="display:none">
+                                    Countdown: <span id="countdown-timer" style="color: red;
+                                                            font-weight: 600;"></span> seconds.
+                                </div>
+                                <p class="StartSpeaking mb-4">Click "Stop Speaking" to stop recording your response</p>
+                                <button id="stop">Stop Recording</button>
+                            </div>
+                            <div class="mt-3 mb-3" style="text-align: center;">
+                                <audio id="player" src="" controls></audio>
+                            </div>
+                            <div style="text-align: center;">
+                                <a href="/Speaking/No4/public/Part2.html" style="display: inline-block; 
+                                                    padding: 10px 20px; 
+                                                    border: 0px; 
+                                                    background-color: rgb(2, 39, 134); 
+                                                    color: white; 
+                                                    border-radius: 10px;
+                                                    text-decoration: none;">Next Part</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/Speaking/No4/public/src/part1.js"></script>
+    <script>
+        document.addEventListener('keydown', (e) => {
+            navigator.clipboard.writeText('');
+            document.body.style.filter = 'blur(50px)';
+            e.preventDefault();
+        });
+        document.addEventListener('keyup', (e) => {
+            navigator.clipboard.writeText('');
+            document.body.style.filter = 'blur(50px)';
+            e.preventDefault();
+        });
+        document.addEventListener('contextmenu', event =>
+            event.preventDefault());
+    </script>
+    <script>
+        var countdownSeconds = 300;
+        function startCountdown() {
+            var countdownElement = document.getElementById("countdown-timer");
+            var countdownMessageElement = document.getElementById("countdown-message");
+            countdownElement.innerText = countdownSeconds;
+            countdownMessageElement.style.display = "block";
+
+            var countdownInterval = setInterval(function () {
+                countdownSeconds--;
+                countdownElement.innerText = countdownSeconds;
+                if (countdownSeconds <= 0) {
+                    clearInterval(countdownInterval);
+                    window.location.href = "#";
+                }
+            }, 1000);
+        }
+        window.onload = startCountdown;
+    </script>
+</body>
+
+</html>
