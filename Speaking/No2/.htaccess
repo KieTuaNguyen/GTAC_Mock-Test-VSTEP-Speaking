@@ -1,0 +1,11 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/wlxcybwahosting/public_html/vstep.gtac-uog.com/Speaking/No1"
+PassengerBaseURI "/Speaking/No1"
+PassengerNodejs "/home/wlxcybwahosting/nodevenv/public_html/vstep.gtac-uog.com/Speaking/No1/10/bin/node"
+PassengerAppType node
+PassengerStartupFile default.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION BEGIN
+<IfModule Litespeed>
+</IfModule>
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END
