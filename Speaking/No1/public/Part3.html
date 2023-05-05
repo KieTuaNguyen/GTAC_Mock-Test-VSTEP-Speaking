@@ -14,7 +14,7 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="https://gtac-uog.com/favicon.png" type="image/x-icon">
-    <title>GTAC | VSTEP SPEAKING MOCK TEST</title>
+    <title>GTAC | MOCK TEST VSTEP SPEAKING</title>
 </head>
 
 <body>
@@ -22,66 +22,62 @@
         <div class="row">
             <div class="d-flex flex-column align-items-center">
                 <p>VSTEP Speaking Mock Test | by Computing Department of GTAC</p>
-                <button id="descriptionStart">Part 2</button>
+                <button id="descriptionStart">Part 3</button>
             </div>
         </div>
     </div>
+
     <div class="row m-0" id="speaking" contenteditable="false" ondragstart="return false" onselectstart="return false">
         <div class="container">
             <div class="mt-4 d-flex justify-content-center flex-column align-items-center">
                 <div class="card mb-4">
                     <div class="card-header">
-                        <h5 class="card-title text-center mb-0">Part 2</h5>
+                        <h5 class="card-title text-center mb-0">Part 3</h5>
                     </div>
                     <div class="card-body">
-                        <p class="card-text">Your English teacher is going to return to her home country. What gift
-                            would
-                            you choose?</p>
+                        <p class="card-text">Having healthy breakfasts is beneficial.</p>
+                        <img class="card-img-top mx-auto d-block"
+                            src="https://vstep.gtac-uog.com/Speaking/photos/no1_part3.jpg" alt="no1_part3">
+                        <p class="card-text">Follow-up questions:</p>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">A cynical leaf hat (Non La)</li>
-                            <li class="list-group-item">A set of Ao Dai</li>
-                            <li class="list-group-item">Some sweet specialties</li>
+                            <li class="list-group-item">What are some problems if skipping breakfast?</li>
+                            <li class="list-group-item">What is the most important meal of the day, breakfast, lunch or
+                                dinner?</li>
+                            <li class="list-group-item">Are breakfast nowadays different from the past?</li>
+                            <div class="text-center mx-auto d-block">
+                                <div class="d-flex justify-content-between" id="recordStarting">
+                                    <p class="text-muted"><small><span id="timer"></span></small></p>
+                                </div>
+                                <p class="StartSpeaking mb-4">Click "Stop Speaking" to stop recording your response</p>
+                                <div id="countdown-message" style="display:none">
+                                    Kết thúc sau <span id="countdown-timer" style="color: red;
+                                                            font-weight: 600;"></span> giây.
+                                </div>
+                                <button id="stop" class="btn btn-primary">Stop Recording</button>
+                            </div>
+                            <div class="card-body ">
+                                <ul class="list-group list-group-flush">
+                                    <div class="mt-3 mb-3" style="text-align: center;">
+                                        <audio id="player" src="" controls></audio>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <a class="btn btn-primary" href="https://forms.gle/ZkXqVrnTLL1amaKeA" style="display: inline-block; 
+                                      padding: 10px 20px; 
+                                      border: 0px; 
+                                      background-color: rgb(2, 39, 134); 
+                                      color: white; 
+                                      border-radius: 10px;
+                                      text-decoration: none;">Submit</a>
+                                    </div>
+                                </ul>
+                            </div>
                         </ul>
                     </div>
-                </div>
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between" id="recordStarting">
-                            <p class="card-text mb-0">Reading time: <span id="timer"></span> seconds</p>
-                        </div>
-                        <div id="countdown-message" style="display:none">
-                            Kết thúc sau <span id="countdown-timer" style="color: red; font-weight: 600;"></span>
-                            giây.<br>
-                        </div>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="text-center">
-                            <div class="d-flex justify-content-between" id="recordStarting">
-                                <p class="text-muted"><small><span id="timer"></span></small></p>
-                            </div>
-                            <p class="StartSpeaking mb-4">Click "Stop Speaking" to stop recording your response</p>
-                            <button id="stop" class="btn btn-primary">Stop Recording</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-3 mb-3" style="text-align: center;">
-                    <audio id="player" src="" controls></audio>
-                </div>
-                <div style="text-align: center;">
-                    <a class="btn btn-primary" href="/No1/public/Part3.html" style="display: inline-block; 
-                                                    padding: 10px 20px; 
-                                                    border: 0px; 
-                                                    background-color: rgb(2, 39, 134); 
-                                                    color: white; 
-                                                    border-radius: 10px;
-                                                    text-decoration: none;">Next Part</a>
                 </div>
             </div>
         </div>
     </div>
-
-    <script src="/No1/public/src/part2.js"></script>
+    <script src="/Speaking/No1/public/src/part3.js"></script>
     <script>
         document.addEventListener('keydown', (e) => {
             navigator.clipboard.writeText('');
@@ -97,7 +93,7 @@
             event.preventDefault());
     </script>
     <script>
-        var countdownSeconds = 180;
+        var countdownSeconds = 300;
         function startCountdown() {
             var countdownElement = document.getElementById("countdown-timer");
             var countdownMessageElement = document.getElementById("countdown-message");
@@ -115,6 +111,7 @@
         }
         window.onload = startCountdown;
     </script>
+
 </body>
 
 </html>
